@@ -52,7 +52,9 @@ a{
 }
 
 .bgNav {
-  background-color: #000000;
+  background-color: #00000086;
+  backdrop-filter: saturate(180%) blur(13px);
+
 }
 
 .hoverNav:hover{
