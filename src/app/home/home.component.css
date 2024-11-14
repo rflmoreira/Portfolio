@@ -45,11 +45,11 @@ a{
 
 .wave {
    display: inline-block;
-   transition: transform 0.3s ease; /* Transição suave */
+   transition: transform 0.3s ease;
 }
 
-.wave:hover {
-   animation: wave-animation 1s infinite;
+.wave:hover, .wave:active {
+   animation: wave-animation 1s forwards;
 }
 
 @keyframes wave-animation {
@@ -75,3 +75,9 @@ a{
       transform: none;
     }
   }
+
+  @media (pointer: coarse) {
+   .wave:active {
+       animation: wave-animation 1s forwards;
+   }
+}
