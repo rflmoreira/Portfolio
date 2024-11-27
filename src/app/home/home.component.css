@@ -34,7 +34,7 @@ a{
    transform: translateY(calc(100% - 2px));
    width: 100%;
    height: 100%;
-   background-color: #8fef8f;
+   background-color: #1769aa;
    transition: transform .2s ease-out;
 }
 
