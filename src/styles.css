@@ -11,6 +11,21 @@ html{
   scroll-behavior: smooth;
 }
 
+body {
+  animation: fadeInAnimation 2s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0; /* Totalmente transparente */
+      background-color: #11111b; /* Cor inicial */
+  }
+  100% {
+      opacity: 1; /* Totalmente visível */
+      background-color: #11111b; /* Cor final (ou outra desejada) */
+   }
+}
+
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
       -webkit-user-select: none; /* Safari */
@@ -22,7 +37,7 @@ html{
   }
   
 .bg{
-  background-color: #0d1117;
+  background-color: #11111b;
 }
 
 .section-title {
