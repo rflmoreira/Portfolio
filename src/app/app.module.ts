@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+// Importação dos componentes standalone
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SobreMimComponent } from './sobre-mim/sobre-mim.component';
@@ -11,9 +12,13 @@ import { HabilidadesComponent } from './habilidades/habilidades.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 
-
 @NgModule({
   declarations: [
+    // Nenhum componente standalone deve ser declarado aqui
+  ],
+  imports: [
+    BrowserModule,
+    // Componentes standalone devem ser importados aqui
     AppComponent,
     NavbarComponent,
     SobreMimComponent,
@@ -24,10 +29,7 @@ import { FooterComponent } from './footer/footer.component';
     HomeComponent,
     FooterComponent
   ],
-  imports: [
-    BrowserModule
-  ],
   providers: [],
-  bootstrap: [AppComponent]
+  // Não é necessário bootstrap do AppComponent aqui, pois ele é standalone
 })
 export class AppModule { }
