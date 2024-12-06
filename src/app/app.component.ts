@@ -11,6 +11,8 @@ import { FooterComponent } from './footer/footer.component';
 @Component({
   selector: 'app-root',
   standalone: true,
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
   imports: [
     NavbarComponent,
     SobreMimComponent,
@@ -20,8 +22,8 @@ import { FooterComponent } from './footer/footer.component';
     HabilidadesComponent,
     HomeComponent,
     FooterComponent
-  ],
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  ]
 })
-export class AppComponent {}
+export class AppComponent {
+  title = 'portfolio'; // Substitua pelo título da sua aplicação
+}
