@@ -1,10 +1,13 @@
 <div class="bg">
-<app-navbar></app-navbar>
-<app-modal-contato></app-modal-contato>
-<app-home></app-home>
-<app-sobre-mim></app-sobre-mim>
-<app-habilidades></app-habilidades>
-<app-projetos></app-projetos>
-<app-modal-projeto></app-modal-projeto>
-<app-footer></app-footer>
+    <app-loading *ngIf="loading"></app-loading>
+    <ng-container *ngIf="!loading">
+        <app-navbar></app-navbar>
+        <app-modal-contato></app-modal-contato>
+        <app-home></app-home>
+        <app-sobre-mim></app-sobre-mim>
+        <app-habilidades></app-habilidades>
+        <app-projetos></app-projetos>
+        <app-modal-projeto></app-modal-projeto>
+        <app-footer></app-footer>
+    </ng-container>
 </div>
