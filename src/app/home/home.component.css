@@ -81,3 +81,30 @@ a{
        animation: wave-animation 1s forwards;
    }
 }
+
+/* ANIMAÇÃO 3D DO LOGO */
+#logo-animation-container {
+  position: relative;
+}
+
+#logo-animation-container canvas {
+  cursor: grab;
+}
+
+#logo-animation-container canvas:active {
+  cursor: grabbing;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  #logo-animation-container {
+    height: 400px !important;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #logo-animation-container {
+    height: 350px !important;
+  }
+}
