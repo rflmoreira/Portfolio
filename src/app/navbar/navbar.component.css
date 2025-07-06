@@ -1,51 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
-body{
-  width: 100%;
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  font-family: 'Roboto', sans-serif;
-  background: #08070B;
-}
-ul{
-  list-style: none;
-}
-ul li{
-  display: inline-block;
-  margin: 10px 0;
-}
-ul li a{
-  display: block;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 18px;
-  letter-spacing: 2px;
-  color: #fff;
-  margin: 0 10px;
-  padding: 10px 25px;
-  position: relative;
-}
-ul li a::before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 0;
-  background: #8fef8f;
-  z-index: -1;
-  box-shadow: 0 0 10px #8fef8f,
-              0 0 20px #8fef8f,
-              0 0 40px #8fef8f,
-              0 0 80px #8fef8f,
-              0 0 100px #8fef8f;
-  transition: 0.25s;
-}
-ul li a:hover::before{
-  width: 100%;
-}
-
 /* Color of the links BEFORE scroll */
 a{
   cursor: pointer;
@@ -54,63 +8,174 @@ a{
 .bgNav {
   background-color: #00000086;
   backdrop-filter: saturate(180%) blur(13px);
-
-}
-
-.hoverNav:hover{
-  background-size: 0 3px, 100% 3px;
+  border-radius: 25px;
+  margin: 15px auto;
+  max-width: 90%;
+  width: fit-content;
+  padding: 8px 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 /*estilo do botão*/
-
- 
-
 .neon-bt {
-
   position: relative;
-
   display: inline-block;
-
   padding: 10px 25px;
-
-  color: #8fef8f;
-
+  color: #fff;
+  background-color: #333;
   font-size: 16px;
-
   text-decoration: none;
-
   text-transform: uppercase;
-
   overflow: hidden;
-
-  transition: 0.2s;
-
-
-  letter-spacing: 4px
-
+  transition: 0.3s;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
-
- 
 
 .neon-bt:hover {
-
-  background: #8fef8f;
-
+  background-color: #555;
   color: #fff;
-
-  border-radius: 5px;
-
-  box-shadow: 0 0 5px #8fef8f,
-
-              0 0 25px #8fef8f,
-
-              0 0 50px #8fef8f,
-
-              0 0 100px #8fef8f;
-
 }
 
- 
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 15px;
+}
 
- 
+.navbar {
+  padding: 0;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0 5px;
+}
+
+.nav-link {
+  display: block;
+  padding: 8px 15px;
+  margin: 0;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.neon-bt {
+  margin: 0 0 0 15px;
+  padding: 8px 20px;
+  border-radius: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .bgNav {
+    max-width: 95%;
+    margin: 10px auto;
+    padding: 6px 12px;
+  }
+  
+  .navbar-container {
+    padding: 6px 10px;
+  }
+  
+  .nav-item {
+    margin: 0 3px;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 6px 10px;
+  }
+  
+  .neon-bt {
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 6px 15px;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .bgNav {
+    max-width: 98%;
+    margin: 8px auto;
+    padding: 4px 8px;
+  }
+  
+  .navbar-container {
+    padding: 4px 6px;
+  }
+  
+  .nav-item {
+    margin: 0 2px;
+  }
+  
+  .nav-link {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    padding: 4px 8px;
+  }
+  
+  .neon-bt {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    margin-left: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .bgNav {
+    padding: 3px 6px;
+  }
+  
+  .navbar-container {
+    padding: 3px 4px;
+  }
+  
+  .nav-item {
+    margin: 0 1px;
+  }
+  
+  .nav-link {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    padding: 3px 6px;
+  }
+  
+  .neon-bt {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+    padding: 3px 8px;
+    margin-left: 5px;
+  }
+}
+
+
+
+
 
