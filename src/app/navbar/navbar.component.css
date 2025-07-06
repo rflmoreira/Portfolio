@@ -9,7 +9,7 @@ a{
   background-color: #00000086;
   backdrop-filter: saturate(180%) blur(13px);
   border-radius: 25px;
-  margin: 8px auto 0 auto;
+  margin: 12px auto 0 auto;
   max-width: 90%;
   width: fit-content;
   padding: 8px 20px;
@@ -93,7 +93,7 @@ a{
 @media (max-width: 768px) {
   .bgNav {
     max-width: 95%;
-    margin: 6px auto 0 auto;
+    margin: 8px auto 0 auto;
     padding: 6px 12px;
   }
   
@@ -122,7 +122,34 @@ a{
 @media (max-width: 576px) {
   .bgNav {
     max-width: 98%;
-    margin: 5px auto 0 auto;
+    margin: 6px auto 0 auto;
+    padding: 6px 10px;
+  }
+  
+  .navbar-container {
+    padding: 5px 8px;
+  }
+  
+  .nav-item {
+    margin: 0 2px;
+  }
+  
+  .nav-link {
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    padding: 5px 10px;
+  }
+  
+  .neon-bt {
+    font-size: 13px;
+    letter-spacing: 0.6px;
+    padding: 5px 12px;
+    margin-left: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .bgNav {
     padding: 4px 8px;
   }
   
@@ -131,47 +158,20 @@ a{
   }
   
   .nav-item {
-    margin: 0 2px;
-  }
-  
-  .nav-link {
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    padding: 4px 8px;
-  }
-  
-  .neon-bt {
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    padding: 4px 10px;
-    margin-left: 8px;
-  }
-}
-
-@media (max-width: 400px) {
-  .bgNav {
-    padding: 3px 6px;
-  }
-  
-  .navbar-container {
-    padding: 3px 4px;
-  }
-  
-  .nav-item {
     margin: 0 1px;
   }
   
   .nav-link {
-    font-size: 10px;
-    letter-spacing: 0.3px;
-    padding: 3px 6px;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    padding: 4px 8px;
   }
   
   .neon-bt {
-    font-size: 10px;
-    letter-spacing: 0.3px;
-    padding: 3px 8px;
-    margin-left: 5px;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    padding: 4px 10px;
+    margin-left: 6px;
   }
 }
 
