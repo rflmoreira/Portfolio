@@ -22,7 +22,7 @@ a{
   display: inline-block;
   padding: 10px 25px;
   color: #fff;
-  background-color: #1769aa;
+  background-color: #1768aa6e;
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
@@ -34,7 +34,7 @@ a{
 }
 
 .neon-bt:hover {
-  background-color: #555;
+  background-color: #1769aa;
   color: #fff;
 }
 
