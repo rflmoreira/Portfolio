@@ -85,10 +85,18 @@ a{
 /* ANIMAÇÃO 3D DO LOGO */
 #logo-animation-container {
   position: relative;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 #logo-animation-container canvas {
   cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 #logo-animation-container canvas:active {

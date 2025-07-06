@@ -126,7 +126,17 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
         this.controls.enableRotate = true;
         this.controls.enableZoom = false; // Desabilita o zoom
         this.controls.enablePan = false;
-        console.log('OrbitControls inicializado com sucesso - apenas rotação');
+        
+        // Configurações específicas para dispositivos móveis
+        this.controls.touches = {
+          ONE: THREE.TOUCH.ROTATE,
+          TWO: THREE.TOUCH.DOLLY_PAN
+        };
+        
+        // Adiciona estilos para melhor experiência touch
+        this.renderer.domElement.style.touchAction = 'none';
+        
+        console.log('OrbitControls inicializado com sucesso - Desktop e Mobile');
       } else {
         console.warn('OrbitControls não disponível, criando controles básicos');
         this.addBasicControls(container);
@@ -208,9 +218,13 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private addBasicControls(container: HTMLElement) {
     let isMouseDown = false;
+    let isTouching = false;
     let mouseX = 0;
     let mouseY = 0;
+    let touchX = 0;
+    let touchY = 0;
 
+    // Eventos de mouse para desktop
     container.addEventListener('mousedown', (event) => {
       isMouseDown = true;
       mouseX = event.clientX;
@@ -241,10 +255,49 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
       container.style.cursor = 'grab';
     });
 
-    // Define o cursor inicial
-    container.style.cursor = 'grab';
+    // Eventos de toque para dispositivos móveis
+    container.addEventListener('touchstart', (event) => {
+      event.preventDefault();
+      isTouching = true;
+      const touch = event.touches[0];
+      touchX = touch.clientX;
+      touchY = touch.clientY;
+    }, { passive: false });
 
-    console.log('Controles básicos de mouse adicionados - Apenas arrastar para girar');
+    container.addEventListener('touchmove', (event) => {
+      event.preventDefault();
+      if (!isTouching || !this.logoGroup || event.touches.length === 0) return;
+
+      const touch = event.touches[0];
+      const deltaX = touch.clientX - touchX;
+      const deltaY = touch.clientY - touchY;
+
+      this.logoGroup.rotation.y += deltaX * 0.01;
+      this.logoGroup.rotation.x += deltaY * 0.01;
+
+      touchX = touch.clientX;
+      touchY = touch.clientY;
+    }, { passive: false });
+
+    container.addEventListener('touchend', (event) => {
+      event.preventDefault();
+      isTouching = false;
+    }, { passive: false });
+
+    container.addEventListener('touchcancel', (event) => {
+      event.preventDefault();
+      isTouching = false;
+    }, { passive: false });
+
+    // Define o cursor inicial para desktop
+    container.style.cursor = 'grab';
+    
+    // Adiciona estilos CSS para melhor experiência touch
+    container.style.touchAction = 'none';
+    container.style.userSelect = 'none';
+    container.style.webkitUserSelect = 'none';
+
+    console.log('Controles básicos adicionados - Desktop (mouse) e Mobile (touch)');
   }
 
   private onWindowResize(container: HTMLElement) {
