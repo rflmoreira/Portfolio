@@ -2,21 +2,39 @@
 .container {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin-top: 20px;
+    gap: 20px;
   }
 
   /* Estilo do box com borda arredondada */
 .icon-box {
-  display: inline-block;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .wave {
-  display: inline-block;
-  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  width: 65px;
+  height: 65px;
+  border-radius: 15px;
+  border-top: 1px solid #d9d9d9;
+  border-left: 1px solid #d9d9d9;
+  box-shadow: 0 3px 15px 3px #1769aa;
+  background: transparent;
+  transition: 0.4s;
+  cursor: pointer;
 }
 
 .wave:hover, .wave:active {
+  transform: scale(0.9, 0.9);
+  box-shadow: 0 3px 15px 8px #1769aa, 
+    0 -3px 15px 8px #1769aa;
   animation: wave-animation 1s forwards;
 }
 
